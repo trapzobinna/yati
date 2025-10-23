@@ -1,0 +1,373 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: red; */
+    /* z-index: -10; */
+}
+/* NAVBAR */
+/* NAVBAR */
+.navbar {
+  position: absolute;      /* Make it sit on top of the display image */
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  height: 132px;
+  display: flex;
+  justify-content: space-between; /* logo left, nav center, cart right */
+  align-items: center;
+  padding: 0 50px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.2); /* transparent overlay */
+  color: white;
+  flex-wrap: wrap;
+  backdrop-filter: blur(3px); /* optional nice blur effect */
+}
+
+/* DISPLAY SECTION */
+.display {
+  height: 200vh; /* 120% of screen height */
+  position: relative;
+  overflow: hidden;
+  /* background-image: url("./yatimodels3.jpg"); */
+    background-image: url("./displaycropped.jpg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers the hero text vertically */
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 50px;
+  color: white;
+}
+/* HEADERS */
+.disheader {
+  font-size: clamp(50px, 15vw, 150px);
+  opacity: 0;
+  transform: translateX(50px);
+  animation: displayanim 0.6s ease-out forwards;
+}
+
+/* Apply delay differences using animation-delay */
+#w50 {
+  animation-delay: 0.4s;
+}
+
+#site {
+  animation-delay: 0.6s;
+}
+@keyframes displayanim {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.shopbtn {
+  background-color: #a71d1d;
+  color: white;
+  font-weight: bold;
+  font-size: clamp(16px, 2vw, 24px); /* scales with screen */
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  min-width: 140px;
+  max-width: 315px;
+  max-height: 85px;
+  min-height: 40px;
+  padding: 18px 60px;
+  border-radius: 8px;
+
+  /* Centering without hardcoding top/left */
+  margin-top: 40px;
+  align-self: flex-start; /* aligns with left hero text */
+}
+/* LOGO (Left) */
+.logo {
+  width: 180px;
+  height: auto;
+}
+
+/* CENTER NAV (Center) */
+.centernav {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.centernav li {
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.centernav li:hover {
+  color: #a71d1d; /* hover effect */
+}
+
+/* CART (Right) */
+.cart {
+  width: 32px;
+  height: 32px;
+  filter: invert(50);
+}
+
+
+
+.yatiproddisplay {
+  background-color: #ffffff;
+  padding: 80px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.yatiproddisplay h1 {
+  font-family: 'Bad Script';
+  margin-bottom: 60px;
+}
+
+.yatiproddisplay .products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  max-width: 1200px;
+  /* border: 2px solid red; */
+}
+
+.products {
+  position: relative;
+  flex: 1 1 clamp(220px, 30%, 320px);
+  aspect-ratio: 3 / 4;
+  max-width: 320px;
+  min-width: 220px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.instore{
+    background-color: #D42121;
+    font-weight: bolder;
+    font-size: 18px;
+    width: 110px;
+    height: 35px;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    border: none;
+    color: white;
+}
+.shopnow{
+    position: absolute;
+    top: 325px;
+    left: 25px;
+    width: 205px;
+    height: 46px;
+    background-color: white;
+    border: none;
+    border-radius: 17px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+
+
+.yatimodels {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; 
+  background-image: url('./yatimodelback.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  
+  color: white;
+  text-align: center;
+  padding: 80px 50px; 
+}
+
+.yatimodels::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.yatimodels > * {
+  position: relative;
+  z-index: 2;
+}
+.grid-container {
+  display: grid;
+  justify-content: center;
+  align-items: start;
+  gap: 1em;
+
+  grid-template-columns: 240px 340px;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "box1 box2"
+    "box3 box4";
+}
+
+/* shared box styles */
+.grid-container .box {
+  border-radius: 50px;
+  border: 2px solid #f9f9f9;
+  position: relative;
+  overflow: hidden;
+  background-size: cover; /* fill box without gaps */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* individual boxes (set background images + sizes) */
+#box1 {
+  width: 240px;
+  height: 390px;
+  background-image: url("./box1.jpg");
+}
+
+#box2 {
+  width: 340px;
+  height: 390px;
+  background-image: url("./box2.jpg");
+}
+
+#box3 {
+  width: 340px;
+  height: 390px;
+  background-image: url("./box4.jpg");
+}
+
+#box4 {
+  width: 240px;
+  height: 390px; /* adjusted height as you mentioned */
+  background-image: url("./box3.jpg");
+  margin-left: 100px; /* keeps alignment like before */
+}
+
+/* === BUTTON (optional, if you re-enable later) === */
+
+.innerbutton {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  font-family: 'Sansation';
+  font-weight: lighter;
+  height: 50px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0); 
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+position: absolute; /* keep it at the top even on mobile */
+    top: 0;
+    left: 0;    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: none;
+  }
+
+  .logo {
+    width: 140px;
+    margin-bottom: 15px;
+  }
+
+  .centernav {
+    flex-direction: row; /* keep nav items horizontal like you wanted */
+    gap: 25px;
+    margin-bottom: 10px;
+  }
+
+  .cart {
+    position: static;
+    width: 30px;
+    height: 30px;
+  }
+
+  .display {
+    align-items: center; /* center hero text */
+    text-align: center;
+    padding-left: 0;
+    height: 560px;
+    justify-content: flex-start; /* push text down slightly for spacing */
+    padding-top: 200px; /* creates space below navbar */
+    min-height: 80vh;
+  }
+  .disheader{
+   padding-top: 60px;
+   margin-top: 0;
+  }
+  .yatiproddisplay {
+    padding: 50px 20px;
+  }
+
+  .products-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .yatimodels {
+ display: flex;
+    justify-content: center;  /* centers horizontally */
+    align-items: center;      /* centers vertically */
+    min-height: 70vh;
+    padding: 0;           background-position: center top;
+    /* padding: 60px 20px; */
+  }
+  .shopbtn {
+    align-self: center;
+    margin-top: 30px;
+    padding: 14px 40px;
+  }
+ .grid-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.55);
+    transform-origin: center;
+    margin: 0 auto; /* ensure perfect horizontal centering */
+  }
+}
