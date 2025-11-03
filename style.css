@@ -335,7 +335,7 @@ position: absolute; /* keep it at the top even on mobile */
     /* border: 2px solid red; */
     text-align: center;
     padding-left: 0;
-    height: 700px;
+    height: 750px;
     justify-content: flex-start; /* push text down slightly for spacing */
     padding-top: 200px; /* creates space below navbar */
     min-height: 80vh;
